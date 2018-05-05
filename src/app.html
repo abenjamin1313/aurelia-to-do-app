@@ -1,0 +1,33 @@
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>${heading}</h1>
+        <hr/>
+        <div class="col-sm-6">
+          <form class="form-inline" submit.trigger="addTodo()">
+            <div class="form-group">
+              <label for="description">To Do Task Description</label>
+              <input placeholder="description" id="description" class="form-control" type="text" value.bind="todoDescription">          
+            </div>
+            <button type="submit" class="btn btn-success">Add Todo</button>  
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <ul>
+            <li repeat.for="todo of todos" class="input-group">
+              <span class="input-group-addon">
+                <input class="glyphicon glyphicon-align-ok" aria-hidden="true"  type="checkbox" checked.bind="todo.done">
+                <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}">
+                    ${todo.description}
+                  </span>
+              </span>
+              
+              <button class="btn btn-danger" click.trigger="removeTodo(todo)">Remove</button>
+            </li>    
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

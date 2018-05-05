@@ -1,0 +1,9 @@
+hr {
+    border-top: 2px solid #BDC3C7;
+    margin: 10px auto;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
